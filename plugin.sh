@@ -91,6 +91,8 @@ fi
 /kaniko/executor -v ${LOG} \
     --context=${CONTEXT} \
     --dockerfile=${DOCKERFILE} \
+    --insecure=true \
+    --insecure-registry=registry.devindata.com \
     ${EXTRA_OPTS} \
     ${DESTINATIONS} \
     ${CACHE:-} \
