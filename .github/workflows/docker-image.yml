@@ -26,4 +26,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: registry.cn-qingdao.aliyuncs.com/devindata-public/kaniko:${{ date +%s }}
+        tags: registry.cn-qingdao.aliyuncs.com/devindata-public/kaniko:${{ github.sha }}
