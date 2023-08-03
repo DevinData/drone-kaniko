@@ -29,7 +29,10 @@ DOCKERFILE=${PLUGIN_DOCKERFILE:-Dockerfile}
 CONTEXT=${PLUGIN_CONTEXT:-$PWD}
 LOG=${PLUGIN_LOG:-info}
 EXTRA_OPTS=""
+SKIP_PUSH=""
 
+if [[ "${PLUGIN_SKIP_PUSH:-}" == "true"]]; then
+    SKIP_PUSH="--no-push=true"
 if [[ -n "${PLUGIN_TARGET:-}" ]]; then
     TARGET="--target=${PLUGIN_TARGET}"
 fi
@@ -94,6 +97,7 @@ fi
     --insecure=true \
     --insecure-registry=registry.devindata.com \
     ${EXTRA_OPTS} \
+    ${SKIP_PUSH} \
     ${DESTINATIONS} \
     ${CACHE:-} \
     ${TARGET:-} \
