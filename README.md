@@ -16,6 +16,7 @@ steps:
     repo: registry.example.com/example-project
     tags: ${DRONE_COMMIT_SHA}
     cache: true
+    no-push: true
     skip_tls_verify: false # set to true for testing registries ONLY with self-signed certs
     build_args:
     - COMMIT_SHA=${DRONE_COMMIT_SHA}
