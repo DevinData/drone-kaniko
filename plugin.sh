@@ -97,7 +97,7 @@ fi
     --insecure=true \
     --insecure-registry=registry.devindata.com \
     ${EXTRA_OPTS} \
-    ${SKIP_PUSH} \
+    ${NO_PUSH} \
     ${DESTINATIONS} \
     ${CACHE:-} \
     ${TARGET:-} \
